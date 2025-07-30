@@ -1,7 +1,6 @@
 # Personal Website
 
-This repository contains the source code for a simple personal website hosted on GitHub Pages:
-https://golldavid.github.io/personal-website/
+This repository contains the source code for my [personal website](https://golldavid.github.io/personal-website/) hosted on GitHub Pages.
 
 ## Project Structure
 
@@ -10,6 +9,3 @@ https://golldavid.github.io/personal-website/
 - `thesis/arxiv-paper.pdf`: ArXiv paper.
 - `css/styles.css`: Stylesheet for the website.
 
-## License
-
-This project is licensed under the MIT License.
