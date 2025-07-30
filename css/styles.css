@@ -1,0 +1,150 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Sections */
+section {
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Publications */
+.publications {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.publication {
+    border: 1px solid #e0e0e0;
+    padding: 1.2rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.publication h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.publication .details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.publication .description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #34495e;
+}
+
+/* Contact */
+.contact {
+    background-color: #f9f9f9;
+    padding: 1.2rem;
+    border-left: 3px solid #2c3e50;
+    border-radius: 0 4px 4px 0;
+}
+
+.contact p {
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .publications {
+        grid-template-columns: 1fr;
+    }
+}
