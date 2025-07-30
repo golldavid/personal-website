@@ -1,6 +1,7 @@
 # Personal Website
 
-This repository contains the source code for a simple personal website hosted on GitHub Pages. The website showcases professional information, skills, and academic work, including downloadable documents such as a master thesis and an ArXiv paper.
+This repository contains the source code for a simple personal website hosted on GitHub Pages:
+https://golldavid.github.io/personal-website/
 
 ## Project Structure
 
