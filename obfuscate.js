@@ -1,23 +1,45 @@
-/*
-Code copied by LiFaytheGoblin.
-Create a new String function that encrypts all the symbols needed with a rot13 type encryption.
-I use this function to decrypt my previously encrypted personal contact information to prevent spam.
-*/
-String.prototype.rotX = function(){
-    // The charset contains all characters I might need to encrypt plus a "-" as a 0. character (I won't need a "-")
-    charset="- abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:@";
-    // All characters of the left half of the charset get projected onto the right part of the charset and vice versa
-    offset = charset.length / 2;
-    result = ""
-    for (c of this) {
-        i = charset.indexOf(c);
-        cNew = (i > offset) ? charset.charAt(i - offset) : charset.charAt(i + offset);
-        result = result.concat(cNew);
+/**
+ * Custom ROT13-style encryption for contact information obfuscation
+ * Created to decrypt previously encrypted personal contact details
+ */
+
+String.prototype.rotX = function() {
+    // Character set including letters, numbers, and common punctuation
+    const charset = "- abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:@";
+    const offset = Math.floor(charset.length / 2); // Split charset in half
+    let result = "";
+    
+    for (let char of this) {
+        const index = charset.indexOf(char);
+        
+        if (index === -1) {
+            // Character not in charset, keep unchanged
+            result += char;
+        } else {
+            // Apply ROT transformation: swap between first and second half
+            let newIndex;
+            if (index < offset) {
+                // First half maps to second half
+                newIndex = index + offset;
+            } else {
+                // Second half maps to first half  
+                newIndex = index - offset;
+            }
+            result += charset.charAt(newIndex);
+        }
     }
-    return result
+    
+    return result;
 };
 
-function show(what, str) {
-    el = document.getElementById(what)
-    el.innerHTML = str.rotX()
+/**
+ * Display function to decrypt and show obfuscated contact information
+ * @param {string} elementId - ID of the HTML element to update
+ * @param {string} encryptedText - The encrypted text to decrypt and display
+ */
+function show(elementId, encryptedText) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.innerHTML = encryptedText.rotX();
+    }
 }
